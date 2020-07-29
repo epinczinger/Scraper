@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'nokogiri'
-require 'httparty'
 require 'byebug'
+require 'open-uri'
 
 # Class
 class Scraper
@@ -10,7 +10,7 @@ class Scraper
 
   def initialize
     @url = 'https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=1'
-    @unparsed_page = HTTParty.get(url)
+    @unparsed_page = URI.open(@url)
     @parsed_page = Nokogiri::HTML(unparsed_page)
     @job_adds = parsed_page.css('div.job-details')
   end
@@ -25,25 +25,28 @@ class Scraper
       }
       #   jobs = []
       #   jobs << @job
-
-      case to_find
-      when 'title'
-        p @job[:title]
-      when 'company'
-        p @job[:company]
-      when 'city'
-        p  @job[:city]
-      when 'date'
-        p  @job[:date]
-      when 'all'
-        p  @job[:title]
-        p  @job[:company]
-        p  @job[:city]
-        p  @job[:date]
-        p  '----------'
-      end
+      cases(to_find)
     end
-    'That\'s all! Good luck, and good rutes'
+    'That\'s all! Good luck, and good rutes!!'
+  end
+
+  def cases(to_find)
+    case to_find
+    when 'title'
+      p @job[:title]
+    when 'company'
+      p @job[:company]
+    when 'city'
+      p  @job[:city]
+    when 'date'
+      p  @job[:date]
+    when 'all'
+      p  @job[:title]
+      p  @job[:company]
+      p  @job[:city]
+      p  @job[:date]
+      p  '---------'
+    end
   end
 
   def invalid_input(to_find)

@@ -2,12 +2,12 @@
 # frozen_string_literal: true
 
 require 'nokogiri'
-require 'httparty'
 require 'byebug'
+require 'open-uri'
 require_relative '../lib/scraper.rb'
 
 puts "------\nYou are gonna use Backscraper, the easiest way to find your next job!"
-puts "Be ready to find the job you are looking for! \n-----"
+puts "Be ready to find the job you are looking for! \n------"
 
 scrap = Scraper.new
 
