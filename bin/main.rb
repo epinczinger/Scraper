@@ -21,3 +21,4 @@ while scrap.invalid_input(to_find)
 end
 
 puts scrap.search(to_find)
+puts "That\'s all! Good luck, and good rutes!!"

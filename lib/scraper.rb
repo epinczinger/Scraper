@@ -6,13 +6,14 @@ require 'open-uri'
 
 # Class
 class Scraper
-  attr_reader :url, :unparsed_page, :parsed_page, :job_adds, :title, :company, :city, :date, :all, :job
+  attr_reader :url, :unparsed_page, :parsed_page, :job_adds, :title, :company, :city, :date, :all, :job, :page
 
   def initialize
-    @url = 'https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=1'
+    @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
     @unparsed_page = URI.open(@url)
     @parsed_page = Nokogiri::HTML(unparsed_page)
     @job_adds = parsed_page.css('div.job-details')
+    @page = 1
   end
 
   def search(to_find)
@@ -23,14 +24,24 @@ class Scraper
         city: job_add.css('span')[3].text,
         date: job_add.css('span.job-datestamp').text
       }
-      #   jobs = []
-      #   jobs << @job
-      cases(to_find)
+      results(to_find)
     end
-    'That\'s all! Good luck, and good rutes!!'
+    change_page(to_find)
   end
 
-  def cases(to_find)
+  def change_page(to_find)
+    if @page < 2
+
+      @page += 1
+      @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
+      @unparsed_page = URI.open(@url)
+      @parsed_page = Nokogiri::HTML(unparsed_page)
+      @job_adds = parsed_page.css('div.job-details')
+      search(to_find)
+    end
+  end
+
+  def results(to_find)
     case to_find
     when 'title'
       p @job[:title]

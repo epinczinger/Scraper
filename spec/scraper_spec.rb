@@ -8,6 +8,11 @@ require 'nokogiri'
 describe Scraper do
   scrap = Scraper.new
 
+  
+
+
+
+
   context '#invalid_input' do
     it 'Verify the input "city" to be correct' do
       expect(scrap.invalid_input('city')).to be false
