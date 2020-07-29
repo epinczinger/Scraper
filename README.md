@@ -1,43 +1,36 @@
-# TicTacToe
+# Scraper
 
-Traditional Tic Tac Toe game implented in Ruby
+Backscraper was designed to search trough https://www.backpackerjobboard.com.au/ to find your next job!
 
 ## Built With
-​
+
 Ruby 2.6.5
-​
-## Requirements
-
-To display colors install the 'colorize' GEM
-
-gem install colorize
 
 ## Getting Started
 
-​To get a local copy up and running follow these simple example steps.​ 
-Git clone https://github.com/epinczinger/TicTacToe
+To get a local copy up and running follow these simple example steps.
+
+```Git clone https://github.com/epinczinger/Scraper```
 
 ## Commands
 
-ruby main.rb
+From inside bin directory type:
 
-## Intructions to Play
+```ruby main.rb```
 
-Ir order to play, the game needs two players.
+## Intructions to use it
 
-After executing the command to run the game, each player is going to be asked to introduce their name and will have a symbol assigned.
+Ir order to use it, you have to type the commands given in Commands section.
 
-A board with nine numbers boxes will be displayed, and the players are going to be requested on each turn to select one number of the empty boxes.
+Once the Scraper has been lauched, will ask you how you wanna filter the list of jobs availables. 
 
-The number of the selected box will be replaced by the user's symbol. If the user doesn't type the number of an empty box, the choice will be declared invalid and the user will be requested to type again.
+Could be by title, date, company, location, or to print a full description by typing 'all'.
 
-The first player who fills an entire column, row, or diagonal with their symbol will be the winner. 
-
-If none of the players matches that condition, the game will be declared a draw.
+After you type the option you have selected, the filtered list will be printed.
 
 ## Screenshot
 
-![screenshot](/images/screenshot2.png)
+![screenshot](/images/screenshot.png)
 
 ## Authors
 
@@ -46,12 +39,6 @@ If none of the players matches that condition, the game will be declared a draw.
 - Github: [epinczinger](https://github.com/epinczinger)
 - Twitter: [@epinczinger](https://twitter.com/epinczinger)
 - Linkedin: [Esteban-Pinczinger](https://www.linkedin.com/in/esteban-pinczinger-busai-ab49a254/)
-
-👤 **Giancarlo Dumani**
-
-- Github: [gdumani](https://github.com/gdumani)
-- Twitter: [@gdumani1](https://twitter.com/gdumani1)
-- Linkedin: [Giancarlo-Dumani](https://www.linkedin.com/in/giancarlo-dumani-a7364a1a1/?originalSubdomain=cr)
 
 ## 🤝 Contributing
 
