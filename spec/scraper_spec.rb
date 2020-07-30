@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../lib/scraper.rb'
 require 'byebug'
 require 'open-uri'

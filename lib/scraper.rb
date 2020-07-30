@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'nokogiri'
 require 'byebug'
 require 'open-uri'
@@ -30,15 +28,13 @@ class Scraper
   end
 
   def change_page(to_find)
-    if @page < 2
-
+    return unless @page < 2
       @page += 1
       @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
       @unparsed_page = URI.open(@url)
       @parsed_page = Nokogiri::HTML(unparsed_page)
       @job_adds = parsed_page.css('div.job-details')
       search(to_find)
-    end
   end
 
   def results(to_find)
@@ -52,10 +48,10 @@ class Scraper
     when 'date'
       @job[:date]
     when 'all'
-      p  @job[:title]
-      p  @job[:company]
-      p  @job[:city]
-      p  @job[:date]
+      p @job[:title]
+      p @job[:company]
+      p @job[:city]
+      p @job[:date]
       '---------'
     end
   end
