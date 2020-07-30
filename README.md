@@ -20,17 +20,24 @@ From inside bin directory type:
 
 ## Intructions to use it
 
-Ir order to use it, you have to type the commands given in Commands section.
+Ir order to use it, you have to type the command given in the Commands section.
 
-Once the Scraper has been lauched, will ask you how you wanna filter the list of jobs availables. 
+Once the Scraper has been launched, will ask you how you wanna filter the list of available jobs.
 
 Could be by title, date, company, location, or to print a full description by typing 'all'.
 
 After you type the option you have selected, the filtered list will be printed.
 
+## Rspec
+
+To check the detailed test's list type from the root:
+
+```rspec```
+
 ## Screenshot
 
 ![screenshot](/images/screenshot.png)
+![screenshot](/images/screenshot_rspec.png)
 
 ## Authors
 
