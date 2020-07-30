@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'nokogiri'
 require 'byebug'
 require 'open-uri'
@@ -29,12 +31,13 @@ class Scraper
 
   def change_page(to_find)
     return unless @page < 2
-      @page += 1
-      @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
-      @unparsed_page = URI.open(@url)
-      @parsed_page = Nokogiri::HTML(unparsed_page)
-      @job_adds = parsed_page.css('div.job-details')
-      search(to_find)
+
+    @page += 1
+    @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
+    @unparsed_page = URI.open(@url)
+    @parsed_page = Nokogiri::HTML(unparsed_page)
+    @job_adds = parsed_page.css('div.job-details')
+    search(to_find)
   end
 
   def results(to_find)
@@ -58,9 +61,7 @@ class Scraper
 
   def invalid_input(to_find)
     invalid = true
-    if to_find == 'city' || to_find == 'company' || to_find == 'date' || to_find == 'title' || to_find == 'all'
-      invalid = false
-    end
+    invalid = false if to_find.match?(/city|company|date|title|all/)
 
     invalid
   end
