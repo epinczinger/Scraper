@@ -6,7 +6,7 @@ require 'open-uri'
 
 # Class
 class Scraper
-  attr_reader :url, :unparsed_page, :parsed_page, :job_adds, :title, :company, :city, :date, :all, :job, :page
+  attr_reader :url, :unparsed_page, :parsed_page, :title, :company, :city, :date, :all, :job, :page
 
   def initialize
     @url = "https://www.backpackerjobboard.com.au/jobs-in/western-australia/?p=#{@page}"
@@ -24,7 +24,7 @@ class Scraper
         city: job_add.css('span')[3].text,
         date: job_add.css('span.job-datestamp').text
       }
-      results(to_find)
+      p results(to_find)
     end
     change_page(to_find)
   end
@@ -44,19 +44,19 @@ class Scraper
   def results(to_find)
     case to_find
     when 'title'
-      p @job[:title]
+      @job[:title]
     when 'company'
-      p @job[:company]
+      @job[:company]
     when 'city'
-      p  @job[:city]
+      @job[:city]
     when 'date'
-      p  @job[:date]
+      @job[:date]
     when 'all'
       p  @job[:title]
       p  @job[:company]
       p  @job[:city]
       p  @job[:date]
-      p  '---------'
+      '---------'
     end
   end
 
