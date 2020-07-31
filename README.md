@@ -5,18 +5,24 @@ Backscraper was designed to search trough https://www.backpackerjobboard.com.au/
 ## Built With
 
 Ruby 2.6.5
+Bundle 1.16.1
+Rubocop
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-```Git clone https://github.com/epinczinger/Scraper```
+```git clone https://github.com/epinczinger/Scraper```
+
+You will need to install bundle in order to run the file.
+
+```bundle install```
 
 ## Commands
 
-From inside bin directory type:
+From inside root directory type:
 
-```ruby main.rb```
+```bin/main.rb```
 
 ## Intructions to use it
 
@@ -28,18 +34,19 @@ Could be by title, date, company, location, or to print a full description by ty
 
 After you type the option you have selected, the filtered list will be printed.
 
-## Rspec
+## Scraper screenshot
+
+![screenshot](/images/screenshot.png)
+
+## Testing
 
 To check the detailed test's list type from the root:
 
 ```rspec```
 
-## Screenshot
-
-![screenshot](/images/screenshot.png)
 ![screenshot](/images/screenshot_rspec.png)
 
-## Authors
+## Author
 
 👤 **Esteban Pinczinger**
 
