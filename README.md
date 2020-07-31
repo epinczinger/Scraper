@@ -46,6 +46,10 @@ To check the detailed test's list type from the root:
 
 ![screenshot](/images/screenshot_rspec.png)
 
+## Video explanation
+
+On [this link](https://www.loom.com/share/622625f9e6164cdb8e9cc592d6b24c9d) you have a video explanation about the project.
+
 ## Author
 
 👤 **Esteban Pinczinger**
