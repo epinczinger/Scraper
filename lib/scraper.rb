@@ -27,6 +27,15 @@ class Scraper
     change_page(to_find)
   end
 
+  def invalid_input(to_find)
+    invalid = true
+    invalid = false if to_find.match?(/city|company|date|title|all/)
+
+    invalid
+  end
+
+  private
+
   def change_page(to_find)
     return unless @page < 2
 
@@ -55,12 +64,5 @@ class Scraper
       p @job[:date]
       '---------'
     end
-  end
-
-  def invalid_input(to_find)
-    invalid = true
-    invalid = false if to_find.match?(/city|company|date|title|all/)
-
-    invalid
   end
 end
