@@ -34,8 +34,6 @@ class Scraper
     invalid
   end
 
-  private
-
   def change_page(to_find)
     return unless @page < 2
 
