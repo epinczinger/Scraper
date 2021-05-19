@@ -22,7 +22,7 @@ You will need to install bundle in order to run the file.
 
 From inside root directory type:
 
-```bin/main.rb```
+```ruby bin/main.rb```
 
 ## Intructions to use it
 
@@ -56,7 +56,7 @@ On [this link](https://www.loom.com/share/622625f9e6164cdb8e9cc592d6b24c9d) you 
 
 - Github: [epinczinger](https://github.com/epinczinger)
 - Twitter: [@epinczinger](https://twitter.com/epinczinger)
-- Linkedin: [Esteban-Pinczinger](https://www.linkedin.com/in/esteban-pinczinger-busai-ab49a254/)
+- Linkedin: [Esteban-Pinczinger](https://www.linkedin.com/in/esteban-pinczinger/)
 
 ## 🤝 Contributing
 
